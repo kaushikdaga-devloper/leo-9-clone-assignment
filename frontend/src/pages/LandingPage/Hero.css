@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+/* The wrapper that creates the 3D perspective */
+.image-ring-wrapper {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  perspective: 1000px;
+}
+
+/* The container that holds the images and rotates */
+.image-ring {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 20s linear infinite;
+}
+
+.image-ring:hover {
+  animation-play-state: paused;
+}
+
+/* Styling for the images themselves */
+.image-ring img {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.15);
+  top: 50%;
+  left: 50%;
+  margin-top: -70px; /* Half of height */
+  margin-left: -70px; /* Half of width */
+  
+  /* KEY FIX: The 'backface-visibility' property that caused images to disappear has been REMOVED. */
+}
+
+/* Positioning each image around the circle */
+.image-ring img:nth-child(1) { transform: rotateY(0deg) translateZ(220px); }
+.image-ring img:nth-child(2) { transform: rotateY(60deg) translateZ(220px); }
+.image-ring img:nth-child(3) { transform: rotateY(120deg) translateZ(220px); }
+.image-ring img:nth-child(4) { transform: rotateY(180deg) translateZ(220px); }
+.image-ring img:nth-child(5) { transform: rotateY(240deg) translateZ(220px); }
+.image-ring img:nth-child(6) { transform: rotateY(300deg) translateZ(220px); }
+
+/* The animation for the entire ring */
+@keyframes spin {
+  from {
+    /* Increased the tilt angle to -30deg for a more dramatic top-down view */
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+
+/* --- Right Side Content Styling --- */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #212529;
+}
+.hero-subtext {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  color: #6c757d;
+}
+.btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  border-width: 2px;
+}
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+}
+.btn-primary:hover,
+.btn-outline-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.btn-outline-secondary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+.btn-outline-secondary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .hero { text-align: center; }
+  .hero-title { font-size: 2.8rem; }
+  .hero-subtext { font-size: 1.1rem; }
+  .image-ring-wrapper { 
+    max-width: 380px;
+    margin-bottom: 2rem;
+  }
+  .image-ring img {
+    width: 110px; height: 110px; margin-top: -55px; margin-left: -55px;
+  }
+  .image-ring img:nth-child(1) { transform: rotateY(0deg) translateZ(180px); }
+  .image-ring img:nth-child(2) { transform: rotateY(60deg) translateZ(180px); }
+  .image-ring img:nth-child(3) { transform: rotateY(120deg) translateZ(180px); }
+  .image-ring img:nth-child(4) { transform: rotateY(180deg) translateZ(180px); }
+  .image-ring img:nth-child(5) { transform: rotateY(240deg) translateZ(180px); }
+  .image-ring img:nth-child(6) { transform: rotateY(300deg) translateZ(180px); }
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem; }
+}

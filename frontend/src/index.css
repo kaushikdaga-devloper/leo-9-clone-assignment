@@ -1,0 +1,127 @@
+/* Instructions:
+  1. Add this CSS to your global stylesheet (e.g., index.css).
+  2. Use JavaScript to toggle the "dark-mode" class on the <body> element when your button is pressed.
+*/
+
+/* --- Color Variables for Easy Theming --- */
+:root {
+  /* Bright Mode Colors */
+  --bg-bright: #ffffff;
+  --text-bright: #212529;
+  --card-bg-bright: #f8f9fa;
+  --link-bright: #0d6efd;
+  --border-bright: #dee2e6;
+  
+  /* Dark Mode Colors */
+  --bg-dark: #121212;
+  --text-dark: #e9ecef;
+  --card-bg-dark: #1e1e1e;
+  --link-dark: #4dabf7;
+  --border-dark: #343a40;
+}
+
+/* --- BRIGHT MODE (DEFAULT) --- */
+
+body {
+  background-color: var(--bg-bright);
+  color: var(--text-bright);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-bright);
+}
+
+a {
+  color: var(--link-bright);
+}
+
+/* Example style for a card or content box */
+.content-box {
+  background-color: var(--card-bg-bright);
+  border: 1px solid var(--border-bright);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+
+/* --- DARK MODE OVERRIDES --- */
+/* When the button is pressed, these styles will take effect */
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--text-dark);
+}
+
+body.dark-mode a {
+  color: var(--link-dark);
+}
+
+body.dark-mode .content-box {
+  background-color: var(--card-bg-dark);
+  border: 1px solid var(--border-dark);
+}
+/* --- Section Background --- */
+body.dark-mode .advertisement-section {
+  background-color: #1a1a1a; /* A dark background for the section */
+}
+
+/* --- Section Title and Description --- */
+body.dark-mode .advertisement-section .section-title {
+  color: #ffffff; /* Make the main title white */
+}
+
+body.dark-mode .advertisement-section .section-description {
+  color: #aab2bb; /* A softer gray for the paragraph text */
+}
+
+/* --- Card Styles --- */
+body.dark-mode .advertisement-card {
+  background-color: #242424; /* A dark background for each card */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* A more subtle shadow for dark environments */
+}
+
+/* --- Card Content --- */
+body.dark-mode .advertisement-card .card-title {
+  color: #f1f1f1; /* Bright white for the card title */
+}
+
+body.dark-mode .advertisement-card .card-text {
+  color: #aab2bb;
+}
+
+body.dark-mode .advertisement-card .card-link {
+  color: #4dabf7; /* A brighter blue for links in dark mode */
+}
+
+body.dark-mode .advertisement-card .card-link:hover {
+  color: #74c0fc;
+}
+
+/* --- Section Background --- */
+body.dark-mode .trusted-by-section {
+  background-color: #121212; /* Match the main dark body background */
+}
+
+/* --- Section Title --- */
+body.dark-mode .trusted-by-section .section-title {
+  color: #aab2bb; /* Lighter gray for better readability on dark background */
+}
+
+/* --- Logo SVG Styles --- */
+body.dark-mode .logo-item svg {
+  fill: #6c757d; /* Dimmer color for the logos in dark mode */
+}
+
+body.dark-mode .logo-item:hover svg {
+  fill: #ffffff; /* Make logos bright white on hover */
+}

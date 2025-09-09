@@ -1,0 +1,28 @@
+/* Background for navbar */
+.custom-navbar {
+  background: linear-gradient(90deg, #ffffff, #f8f9fa);
+  transition: background 0.3s ease-in-out;
+  padding: 0.8rem 1rem;
+   border-bottom: 1px solid #e0e0e0; /* light gray border */
+}
+
+/* Custom nav link styling */
+.nav-custom {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for nav links */
+.nav-custom:hover {
+  font-size: 1.1rem;
+  color: #ff4d6d !important; /* reddish pink */
+  transform: scale(1.05);
+}
+
+/* Dark mode only for body, not navbar */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}

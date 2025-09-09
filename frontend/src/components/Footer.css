@@ -1,0 +1,170 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+          /* Basic setup for the page */
+          body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+          }
+          
+          /* A simple container class to center content */
+          .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+          }
+          @media (min-width: 768px) { .container { max-width: 720px; } }
+          @media (min-width: 992px) { .container { max-width: 960px; } }
+          @media (min-width: 1200px) { .container { max-width: 1140px; } }
+
+          /* --- Main Footer Container --- */
+          .site-footer {
+            background-color: #111111;
+            color: #aab2bb;
+            font-size: 15px;
+          }
+
+          /* --- Call-to-Action (CTA) Section --- */
+          .footer-cta {
+            background-color: #1a1a1a;
+            padding: 80px 0;
+            text-align: center;
+          }
+
+          .footer-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+          }
+
+          .footer-cta p {
+            font-size: 1.125rem;
+            color: #aab2bb;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .cta-button {
+            background-color: #0d6efd;
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+          }
+
+          .cta-button:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-3px);
+          }
+
+          /* --- Main Footer Content --- */
+          .footer-main {
+            padding: 80px 0 60px;
+          }
+
+          .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+          }
+
+          .footer-column .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            display: block;
+            text-decoration: none;
+          }
+
+          .footer-column .footer-about-text {
+            line-height: 1.7;
+          }
+
+          .footer-column .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+          }
+
+          .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+
+          .footer-links li {
+            margin-bottom: 12px;
+          }
+
+          .footer-links a {
+            color: #aab2bb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+          }
+
+          .footer-links a:hover {
+            color: #ffffff;
+          }
+
+          .footer-social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #aab2bb;
+            transition: color 0.3s ease, transform 0.3s ease;
+          }
+
+          .footer-social-links a:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+          }
+
+          .footer-social-links svg {
+            width: 24px;
+            height: 24px;
+          }
+
+          /* --- Footer Bottom Bar --- */
+          .footer-bottom {
+            border-top: 1px solid #2c2c2c;
+            padding: 30px 0;
+            text-align: center;
+          }
+
+          .footer-bottom-text {
+            color: #777;
+          }
+
+          /* --- Responsive Design --- */
+          @media (max-width: 992px) {
+            .footer-grid {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 40px;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .footer-cta h2 {
+              font-size: 2rem;
+            }
+            .footer-grid {
+              grid-template-columns: 1fr;
+              gap: 40px;
+            }
+            .footer-main {
+              text-align: center;
+            }
+            .footer-social-links {
+              text-align: center;
+            }
+          }
